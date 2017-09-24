@@ -249,12 +249,13 @@ class Calendar extends Component {
 
   render() {
     const { styles } = this;
-    const { onlyClasses, classNames } = this.props;
+    const { onlyClasses, classNames, MoreControl } = this.props;
 
     const classes = { ...defaultClasses, ...classNames };
 
     return (
       <div style={onlyClasses ? undefined : { ...styles['Calendar'], ...this.props.style }} className={classes.calendar}>
+        {MoreControl && <MoreControl />}
         <div className={classes.monthAndYear}>{ this.renderMonthAndYear(classes) }</div>
         <div className={classes.weekDays}>{ this.renderWeekdays(classes) }</div>
         <div className={classes.days}>{ this.renderDays(classes) }</div>
@@ -274,6 +275,7 @@ Calendar.defaultProps = {
 }
 
 Calendar.propTypes = {
+  MoreControl    : PropTypes.element,
   showMonthArrow : PropTypes.bool,
   disableDaysBeforeToday : PropTypes.bool,
   lang           : PropTypes.string,

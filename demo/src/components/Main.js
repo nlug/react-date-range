@@ -8,6 +8,12 @@ import 'styles/global'
 import styles from 'styles/main';
 import '../../../src/styles.scss'
 
+const MoreControl = () => {
+  return (
+    <div>Hello world</div>
+  )
+}
+
 export default class Main extends Component {
   constructor(props, context) {
     super(props, context);
@@ -95,6 +101,7 @@ export default class Main extends Component {
             />
           </div>
           <Calendar
+            MoreControl={MoreControl}
             date={ now => { return now.add(-4, 'days') } }
             onInit={ this.handleChange.bind(this, 'datePicker') }
             onChange={ this.handleChange.bind(this, 'datePicker') }
