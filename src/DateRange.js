@@ -184,7 +184,7 @@ DateRange.defaultProps = {
 DateRange.propTypes = {
   format          : PropTypes.string,
   firstDayOfWeek  : PropTypes.number,
-  MoreControl     : PropTypes.element,
+  MoreControl     : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
   calendars       : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   startDate       : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
   endDate         : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),

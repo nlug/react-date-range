@@ -275,7 +275,7 @@ Calendar.defaultProps = {
 }
 
 Calendar.propTypes = {
-  MoreControl    : PropTypes.element,
+  MoreControl    : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
   showMonthArrow : PropTypes.bool,
   disableDaysBeforeToday : PropTypes.bool,
   lang           : PropTypes.string,
