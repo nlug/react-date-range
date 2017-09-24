@@ -107,7 +107,7 @@ class DateRange extends Component {
   }
 
   render() {
-    const { ranges, format, linkedCalendars, style, calendars, firstDayOfWeek, minDate, maxDate, classNames, onlyClasses, specialDays, lang, disableDaysBeforeToday, offsetPositive, shownDate, showMonthArrow, rangedCalendars } = this.props;
+    const { ranges, format, linkedCalendars, style, calendars, firstDayOfWeek, minDate, maxDate, classNames, onlyClasses, specialDays, lang, disableDaysBeforeToday, offsetPositive, shownDate, showMonthArrow, rangedCalendars, MoreControl } = this.props;
     const { range, link } = this.state;
     const { styles } = this;
 
@@ -157,6 +157,7 @@ class DateRange extends Component {
 		            onlyClasses={ onlyClasses }
 		            specialDays={ specialDays }
                 classNames={ classes }
+                MoreControl= { MoreControl }
                 onChange={ this.handleSelect.bind(this) }  />
             );
           }
@@ -183,6 +184,7 @@ DateRange.defaultProps = {
 DateRange.propTypes = {
   format          : PropTypes.string,
   firstDayOfWeek  : PropTypes.number,
+  MoreControl     : PropTypes.element,
   calendars       : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   startDate       : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
   endDate         : PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
